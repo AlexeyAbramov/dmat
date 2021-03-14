@@ -220,7 +220,7 @@ body {
   font-weight: bold;
 }
 .header .nav-header__link {
-  padding: 37px;
+  padding: 38.5px 37px;
   transition: 0s padding, 0.4s background-color;
   color: #fff;
 }
@@ -869,9 +869,6 @@ body {
     height: 12px;
   }
 
-  .price__service {
-    margin-top: 40px;
-  }
   .price .service-price__title {
     font-size: 20px;
   }
