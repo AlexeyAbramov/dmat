@@ -5,10 +5,9 @@ $(document).ready(function () {
     prevArrow: '<button class="portfolio__prev arrow"></button>',
     nextArrow: '<button class="portfolio__next arrow"></button>',
   });
-  $('.portfolio__item').click(function(){
-    $(this).toggleClass('active');
-  })
-
+  $(".portfolio__item").click(function () {
+    $(this).toggleClass("active");
+  });
 
   $("#menu").click(function () {
     $(this).toggleClass("open");
@@ -19,5 +18,8 @@ $(document).ready(function () {
       $("body").removeClass("overflow");
       $(".header,.header__nav").removeClass("open");
     });
+  });
+  $(".slick-active").click(function () {
+    $(".portfolio__more").css("opacity", "0");
   });
 });

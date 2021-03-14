@@ -51,12 +51,12 @@
   -moz-transform: translateY(-25px) translateX(0) rotate(-45deg);
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 899px) {
   #menu {
-    width: 30px;
-    height: 25px;
+    width: 28px;
+    height: 21px;
     position: absolute;
-    top: 20px;
+    top: 22px;
     right: 20px;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -71,9 +71,9 @@
   #menu span {
     display: block;
     position: absolute;
-    height: 4px;
+    height: 3px;
     width: 100%;
-    background: #383639;
+    background: #fff;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -113,7 +113,7 @@
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
     top: calc(50% - 12px);
-    left: calc(50% - 12px);
+    left: calc(50% - 9px);
   }
   #menu.open span:nth-child(2) {
     width: 0%;
@@ -124,8 +124,8 @@
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    top: calc(50% + 9px);
-    left: calc(50% - 12px);
+    top: calc(50% + 8px);
+    left: calc(50% - 9px);
   }
 
   .overflow {
@@ -164,12 +164,12 @@ h6 {
 }
 
 h1 {
-  font-size: 86px;
+  font-size: 72px;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 42px;
   font-weight: bold;
 }
 
@@ -196,7 +196,7 @@ body {
 
 .header {
   height: 100px;
-  background-color: #ffe3c6;
+  background-color: #111;
 }
 .header__inner {
   display: flex;
@@ -206,7 +206,8 @@ body {
 }
 .header__text {
   font-family: "Prociono", sans-serif;
-  font-size: 35px;
+  font-size: 30px;
+  color: #fff;
 }
 .header .nav-header__list {
   display: flex;
@@ -215,16 +216,20 @@ body {
   align-items: center;
 }
 .header .nav-header__item {
-  font-size: 23px;
+  font-size: 21px;
   font-weight: bold;
 }
 .header .nav-header__link {
   padding: 37px;
   transition: 0s padding, 0.4s background-color;
+  color: #fff;
 }
 .header .nav-header__link:hover, .header .nav-header__link:focus {
   background-color: #d6b9b5;
   outline: none;
+}
+.header #menu {
+  display: none;
 }
 
 .title {
@@ -246,61 +251,76 @@ body {
   color: #ededed;
   position: absolute;
   z-index: 5;
-  max-width: 50%;
+  max-width: 735px;
 }
 
 .about {
   text-align: center;
-  background-color: #ffe3c6;
+  background-color: #fff;
   padding: 120px 0;
 }
 .about__text {
-  font-size: 36px;
+  font-size: 24px;
 }
 .about__text + .about__text {
   margin-top: 50px;
 }
 
 .features {
-  padding: 90px 0;
+  padding: 165px 0 150px 0;
+  background-color: #f0f0f0;
+}
+.features__title {
+  text-align: center;
 }
 .features__list {
   margin-top: 80px;
+  padding: 0 200px;
 }
 .features__item {
-  padding-left: 43px;
   font-size: 30px;
   position: relative;
 }
 .features__item + .features__item {
-  margin-top: 25px;
+  margin-top: 55px;
 }
-.features__item::before {
-  position: absolute;
-  display: block;
-  content: "";
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  left: 0;
-  top: 15px;
-  background-color: black;
+.features .item-features {
+  display: flex;
+}
+.features .item-features__title {
+  font-size: 20px;
+}
+.features .item-features__text {
+  margin-top: 14px;
+  font-size: 18px;
+}
+.features .item-features__icon {
+  width: 55px;
+}
+.features .item-features__done {
+  width: inherit;
+}
+.features .item-features__content {
+  padding-left: 40px;
 }
 
 .portfolio {
-  background-color: #ffe3c6;
+  background-color: #fff;
   min-height: 768px;
-  padding: 50px 0;
+  padding: 120px 0;
 }
 .portfolio__heading {
   text-align: center;
 }
+.portfolio__more {
+  opacity: 0;
+}
 .portfolio__head {
-  font-size: 25px;
+  font-size: 23px;
   line-height: 27px;
 }
 .portfolio__body {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 .portfolio__item {
   padding: 0 50px;
@@ -310,7 +330,7 @@ body {
 }
 .portfolio__text {
   margin-top: 50px;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 27px;
 }
 .portfolio .arrow {
@@ -343,7 +363,7 @@ body {
 .portfolio .slick-dots {
   display: flex;
   justify-content: space-between;
-  width: 10%;
+  width: 25%;
   margin: 50px auto 0 auto;
 }
 .portfolio .slick-dots li button {
@@ -354,21 +374,21 @@ body {
   height: 15px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #f7f7f7;
-  border: 3px solid transparent;
+  background-color: #f0f0f0;
+  border: none;
   margin: 0;
   padding: 0;
 }
 .portfolio .slick-dots .slick-active button {
   background-color: #343434;
-  border: 3px solid #f7f7f7;
 }
 .portfolio__item img {
   max-width: 500px;
 }
 
 .price {
-  padding: 50px 0 90px 0;
+  padding: 65px 0;
+  background-color: #f0f0f0;
 }
 .price__heading {
   text-align: center;
@@ -378,7 +398,7 @@ body {
 }
 .price .service-price {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   grid-gap: 30px;
 }
 .price .service-price__list {
@@ -387,7 +407,29 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #ffe3c6;
+  background-color: #fff;
+}
+.price .service-price__title {
+  font-size: 25px;
+}
+.price .service-price__about {
+  margin-top: 19px;
+  font-size: 17px;
+  min-height: 80px;
+}
+.price .service-price__include {
+  font-size: 20px;
+  margin-top: 25px;
+}
+.price .service-price__text {
+  padding-left: 20px;
+  font-size: 18px;
+}
+.price .service-price__present {
+  font-size: 17px;
+  padding-left: 18px;
+  margin-top: 30px;
+  display: block;
 }
 .price .service-price__list ~ .service-price__list::before {
   position: absolute;
@@ -397,7 +439,7 @@ body {
   height: 120%;
   left: 0;
   top: -32px;
-  background-color: #c4c4c4;
+  background-color: #fff;
 }
 .price .service-price__roster {
   margin-top: 40px;
@@ -416,9 +458,6 @@ body {
   background-color: #383639;
   top: 10px;
 }
-.price .service-price__text {
-  padding-left: 20px;
-}
 .price .service-price__point + .service-price__point {
   margin-top: 30px;
 }
@@ -433,7 +472,7 @@ body {
 
 .checklist {
   padding: 60px 0;
-  background-color: #ffe3c6;
+  background-color: #fff;
 }
 .checklist__title {
   font-size: 37px;
@@ -497,6 +536,7 @@ body {
 
 .footer {
   padding: 50px 0;
+  background-color: #f0f0f0;
 }
 .footer__title {
   font-size: 37px;
@@ -516,17 +556,12 @@ body {
   width: 40px;
 }
 
-@media screen and (min-width: 850px) and (max-width: 1900px) {
+@media screen and (min-width: 900px) {
   .portfolio__right {
     padding: 0 20px;
   }
 }
-@media screen and (max-width: 414px) {
-  ._container {
-    max-width: 414px;
-    padding: 0 20px;
-  }
-
+@media screen and (max-width: 899px) {
   .header {
     width: 100%;
     height: 65px;
@@ -535,11 +570,16 @@ body {
     z-index: 99;
     transition: 0s background-color, 0.4s height ease-out;
   }
-  .header__inner {
-    justify-content: center;
-    padding: 175px 20px;
+  .header__text {
+    font-size: 25px;
   }
-  .header__logo {
+  .header #menu {
+    display: block;
+  }
+  .header .nav-header.open .nav-header__list {
+    display: flex;
+  }
+  .header .nav-header__list {
     display: none;
   }
   .header__nav.nav-header .nav-header__item {
@@ -548,6 +588,12 @@ body {
   }
   .header.open {
     height: 100vh;
+  }
+  .header.open .header__inner {
+    justify-content: center;
+  }
+  .header.open .header__logo {
+    display: none;
   }
   .header.open .nav-header.open {
     display: block;
@@ -565,10 +611,102 @@ body {
       opacity: 1;
     }
   }
-  .header .nav-header.open .nav-header__list {
-    display: flex;
+
+  .title__text {
+    max-width: calc(100% - 22vw);
+    text-align: center;
+    font-size: 6.9vw;
   }
-  .header .nav-header__list {
+
+  .features {
+    padding: 120px 0;
+  }
+  .features__title {
+    font-size: 38px;
+  }
+  .features__list {
+    margin-top: 45px;
+    padding: 0;
+  }
+  .features .item-features__icon {
+    width: 50px;
+  }
+  .features .item-features__title {
+    font-size: 18px;
+  }
+  .features .item-features__text {
+    font-size: 16px;
+  }
+
+  .portfolio__title {
+    font-size: 38px;
+  }
+  .portfolio__more {
+    text-align: center;
+    background-color: #f0f0f0;
+    opacity: 1;
+  }
+  .portfolio__item {
+    position: relative;
+    padding: 0;
+  }
+  .portfolio__item img {
+    max-width: none;
+    width: 100%;
+  }
+  .portfolio__right {
+    display: none;
+  }
+  .portfolio__item.active .portfolio__right {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.87);
+    color: #ededed;
+  }
+  .portfolio__item.active .portfolio__head {
+    text-align: center;
+  }
+  .portfolio__item.active .portfolio__text {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .portfolio .slick-dots {
+    width: 40vw;
+  }
+
+  .price__title {
+    font-size: 38px;
+  }
+  .price .service-price__about {
+    min-height: 120px;
+  }
+  .price .service-price__include {
+    font-size: 18px;
+  }
+  .price .service-price__text {
+    font-size: 16px;
+  }
+
+  .checklist__title {
+    font-size: 38px;
+  }
+
+  .footer__title {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 414px) {
+  ._container {
+    max-width: 414px;
+  }
+
+  .header__inner {
+    padding: 0;
+  }
+  .header__logo {
     display: none;
   }
 
@@ -591,7 +729,7 @@ body {
   }
   .title__text {
     text-align: center;
-    font-size: 29px;
+    font-size: 30px;
     max-width: none;
     width: calc(100vw - 20px);
     top: 42%;
@@ -605,51 +743,39 @@ body {
   }
 
   .about {
-    height: 100vh;
-    padding: 170px 0;
+    padding: 120px 0;
   }
   .about__text {
-    font-size: 27px;
+    font-size: 20px;
   }
 
-  .features {
-    height: 100vh;
-    padding: 0;
-    padding-top: 27px;
-  }
   .features__title {
-    font-size: 25px;
+    font-size: 30px;
+    text-align: center;
   }
   .features__list {
-    margin-top: 65px;
+    padding: 0 0;
   }
   .features__item {
     font-size: 20px;
     line-height: 22px;
-    padding-left: 17px;
-  }
-  .features__item::before {
-    position: absolute;
-    display: block;
-    content: "";
-    left: 0;
-    top: 7px;
-    background-color: black;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
   }
   .features__item + .features__item {
     margin-top: 40px;
   }
+  .features .item-features__icon {
+    width: 40px;
+  }
+  .features .item-features__content {
+    padding-left: 20px;
+  }
 
   .portfolio {
     min-height: 0;
-    height: 100vh;
     padding: 85px 0;
   }
   .portfolio__title {
-    font-size: 35px;
+    font-size: 30px;
   }
   .portfolio .slick-arrow {
     display: none;
@@ -661,9 +787,6 @@ body {
   .portfolio__item img {
     max-width: none;
     width: 100%;
-  }
-  .portfolio__right {
-    display: none;
   }
   .portfolio .slick-arrow {
     display: none !important;
@@ -690,13 +813,16 @@ body {
   }
 
   .price__title {
-    font-size: 35px;
+    font-size: 30px;
   }
   .price .service-price {
     grid-gap: 80px;
   }
   .price .service-price__title {
     font-size: 25px;
+  }
+  .price .service-price__about {
+    min-height: 0;
   }
   .price .service-price__point {
     font-size: 18px;
@@ -718,7 +844,7 @@ body {
   }
 
   .footer__title {
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
   }
   .footer .social-footer {
@@ -733,50 +859,16 @@ body {
     width: 26px;
   }
 }
-@media only screen and (width: 414px) and (height: 896px) {
-  .about {
-    padding: 160px 0;
-  }
-
-  .features {
-    padding: 50px 0;
-  }
-
-  .portfolio {
-    padding: 80px 0;
-  }
-  .portfolio__item.active__text {
-    margin-top: 35px;
-  }
-
-  .price__title {
-    font-size: 40px;
-  }
-}
 @media screen and (max-width: 375px) {
   .about {
     padding: 70px 0;
   }
 
-  .features {
-    height: auto;
-    padding: 30px 0;
-  }
-  .features__title {
-    font-size: 24px;
-  }
-
-  .portfolio__title {
-    font-size: 25px;
-  }
   .portfolio .slick-dots li button {
     width: 12px;
     height: 12px;
   }
 
-  .price__title {
-    font-size: 25px;
-  }
   .price__service {
     margin-top: 40px;
   }
@@ -787,16 +879,9 @@ body {
     padding: 30px 35px;
   }
 
-  .checklist__title {
-    font-size: 24px;
-  }
   .checklist__link {
     width: 215px;
     padding: 20px 0;
-  }
-
-  .footer__title {
-    font-size: 24px;
   }
 }
 @media screen and (max-width: 375px) and (height: 667px) {
@@ -816,9 +901,6 @@ body {
   .features__heading {
     text-align: center;
   }
-  .features__title {
-    font-size: 25px;
-  }
   .features__list {
     margin-top: 90px;
   }
@@ -829,26 +911,12 @@ body {
     margin-top: 10px;
   }
 
-  .portfolio__title {
-    font-size: 29px;
-  }
-
-  .price__title {
-    font-size: 35px;
-  }
   .price .service-price__list {
     padding: 30px 25px;
   }
 
-  .checklist__title {
-    font-size: 26px;
-  }
   .checklist__link {
     width: calc(100vw - 40px);
-  }
-
-  .footer__title {
-    font-size: 30px;
   }
 }
 

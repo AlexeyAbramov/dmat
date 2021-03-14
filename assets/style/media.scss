@@ -1,4 +1,4 @@
-@media screen and (min-width: 850px) and (max-width: 1900px) {
+@media screen and (min-width: 900px) {
   //PORTFOLIO
   .portfolio {
     &__right {
@@ -6,12 +6,8 @@
     }
   }
 }
-@media screen and (max-width: 414px) {
-  ._container {
-    max-width: 414px;
-    padding: 0 20px;
-  }
-  // HEADER
+@media screen and (max-width: 899px) {
+  //HEADER
   .header {
     width: 100%;
     height: 65px;
@@ -19,12 +15,21 @@
     top: 0;
     z-index: 99;
     transition: 0s background-color, 0.4s height ease-out;
-    &__inner {
-      justify-content: center;
-      padding: 175px 20px;
+    &__text {
+      font-size: 25px;
     }
-    &__logo {
-      display: none;
+    #menu {
+      display: block;
+    }
+    .nav-header {
+      &.open {
+        .nav-header__list {
+          display: flex;
+        }
+      }
+      &__list {
+        display: none;
+      }
     }
     &__nav {
       &.nav-header {
@@ -36,6 +41,14 @@
     }
     &.open {
       height: 100vh;
+      .header {
+        &__inner {
+          justify-content: center;
+        }
+        &__logo {
+          display: none;
+        }
+      }
       .nav-header {
         &.open {
           display: block;
@@ -55,15 +68,123 @@
         }
       }
     }
-    .nav-header {
-      &.open {
-        .nav-header__list {
-          display: flex;
+  }
+  //TITLE
+  .title {
+    &__text {
+      max-width: calc(100% - 22vw);
+      text-align: center;
+      font-size: 6.9vw;
+    }
+  }
+  //FEATURES
+  .features {
+    padding: 120px 0;
+    &__title {
+      font-size: 38px;
+    }
+    &__list {
+      margin-top: 45px;
+      padding: 0;
+    }
+    .item-features {
+      &__icon {
+        width: 50px;
+      }
+      &__title {
+        font-size: 18px;
+      }
+      &__text {
+        font-size: 16px;
+      }
+    }
+  }
+  //PORTFOLIO
+  .portfolio {
+    &__title {
+      font-size: 38px;
+    }
+    &__more{
+      text-align: center;
+      background-color: $grey-10;
+      opacity: 1;
+    }
+    &__item {
+      position: relative;
+      padding: 0;
+      img {
+        max-width: none;
+        width: 100%;
+      }
+    }
+    &__right {
+      display: none;
+    }
+    &__item.active {
+      .portfolio {
+        &__right {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: inherit;
+          padding: 30px;
+          background-color: rgb(0, 0, 0, 0.87);
+          color: $white-10;
+        }
+        &__head {
+          text-align: center;
+        }
+        &__text {
+          font-size: 18px;
+          line-height: 23px;
         }
       }
-      &__list {
-        display: none;
+    }
+    .slick-dots {
+      width: 40vw;
+    }
+  }
+  //PRICE
+  .price {
+    &__title {
+      font-size: 38px;
+    }
+    .service-price{
+      &__about{
+        min-height: 120px;
       }
+      &__include{
+        font-size: 18px;
+      }
+      &__text{
+        font-size: 16px;
+      }
+    }
+  }
+  //CHECKLIST
+  .checklist {
+    &__title {
+      font-size: 38px;
+    }
+  }
+  //FOOTER
+  .footer {
+    &__title {
+      font-size: 38px;
+    }
+  }
+}
+@media screen and (max-width: 414px) {
+  ._container {
+    max-width: 414px;
+  }
+  // HEADER
+  .header {
+    &__inner {
+      padding: 0;
+    }
+    &__logo {
+      display: none;
     }
   }
   // TITLE
@@ -87,7 +208,7 @@
     }
     &__text {
       text-align: center;
-      font-size: 29px;
+      font-size: 30px;
       max-width: none;
       width: calc(100vw - 20px);
       top: 42%;
@@ -102,50 +223,42 @@
   }
   // ABOUT
   .about {
-    height: 100vh;
-    padding: 170px 0;
+    padding: 120px 0;
     &__text {
-      font-size: 27px;
+      font-size: 20px;
     }
   }
   //FEATURES
   .features {
-    height: 100vh;
-    padding: 0;
-    padding-top: 27px;
     &__title {
-      font-size: 25px;
+      font-size: 30px;
+      text-align: center;
     }
     &__list {
-      margin-top: 65px;
+      padding: 0 0;
     }
     &__item {
       font-size: 20px;
       line-height: 22px;
-      padding-left: 17px;
-      &::before {
-        position: absolute;
-        display: block;
-        content: "";
-        left: 0;
-        top: 7px;
-        background-color: black;
-        border-radius: 50%;
-        width: 8px;
-        height: 8px;
-      }
     }
     &__item + .features__item {
       margin-top: 40px;
+    }
+    .item-features {
+      &__icon {
+        width: 40px;
+      }
+      &__content {
+        padding-left: 20px;
+      }
     }
   }
   //PORTFOLIO
   .portfolio {
     min-height: 0;
-    height: 100vh;
     padding: 85px 0;
     &__title {
-      font-size: 35px;
+      font-size: 30px;
     }
     .slick-arrow {
       display: none;
@@ -157,9 +270,6 @@
         max-width: none;
         width: 100%;
       }
-    }
-    &__right {
-      display: none;
     }
     .slick-arrow {
       display: none !important;
@@ -192,12 +302,15 @@
   //PRICE
   .price {
     &__title {
-      font-size: 35px;
+      font-size: 30px;
     }
     .service-price {
       grid-gap: 80px;
       &__title {
         font-size: 25px;
+      }
+      &__about{
+        min-height: 0;
       }
       &__point {
         font-size: 18px;
@@ -224,7 +337,7 @@
   //FOOTER
   .footer {
     &__title {
-      font-size: 25px;
+      font-size: 30px;
       text-align: center;
     }
     .social-footer {
@@ -240,87 +353,38 @@
     }
   }
 }
-// IPHONE 11
-@media only screen and (width: 414px) and (height: 896px) {
-  //ABOUT
-  .about {
-    padding: 160px 0;
-  }
-  //FEATURES
-  .features {
-    padding: 50px 0;
-  }
-  //PORTFOLIO
-  .portfolio {
-    padding: 80px 0;
-    &__item.active {
-      &__text {
-        margin-top: 35px;
-      }
-    }
-  }
-  //PRICE
-  .price {
-    &__title {
-      font-size: 40px;
-    }
-  }
-}
 // IPHONE X
 @media screen and (max-width: 375px) {
   //ABOUT
-  .about{
+  .about {
     padding: 70px 0;
   }
-  //FEATURES
-  .features{
-    height: auto;
-    padding: 30px 0;
-    &__title{
-      font-size: 24px;
-    }
-  }
   //PORTFOLIO
-  .portfolio{
-    &__title{
-      font-size: 25px;
-    }
-    .slick-dots li button{
+  .portfolio {
+    .slick-dots li button {
       width: 12px;
       height: 12px;
     }
   }
   //PRICE
   .price {
-    &__title {
-      font-size: 25px;
-    }
-    &__service{
+    &__service {
       margin-top: 40px;
     }
-    .service-price{
-      &__title{
+    .service-price {
+      &__title {
         font-size: 20px;
       }
-      &__list{
+      &__list {
         padding: 30px 35px;
       }
     }
   }
   //CHECKLIST
   .checklist {
-    &__title {
-      font-size: 24px;
-    }
-    &__link{
+    &__link {
       width: 215px;
       padding: 20px 0;
-    }
-  }
-  //FOOTER
-  .footer {
-    &__title {
-      font-size: 24px;
     }
   }
 }
@@ -345,9 +409,6 @@
     &__heading {
       text-align: center;
     }
-    &__title {
-      font-size: 25px;
-    }
     &__list {
       margin-top: 90px;
     }
@@ -358,17 +419,8 @@
       margin-top: 10px;
     }
   }
-  //PORTFOLIO
-  .portfolio {
-    &__title {
-      font-size: 29px;
-    }
-  }
   //PRICE
   .price {
-    &__title {
-      font-size: 35px;
-    }
     .service-price {
       &__list {
         padding: 30px 25px;
@@ -377,17 +429,8 @@
   }
   //CHECKLIST
   .checklist {
-    &__title {
-      font-size: 26px;
-    }
     &__link {
       width: calc(100vw - 40px);
-    }
-  }
-  //FOOTER
-  .footer {
-    &__title {
-      font-size: 30px;
     }
   }
 }

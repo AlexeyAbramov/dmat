@@ -28,11 +28,11 @@ h6 {
   padding: 0;
 }
 h1 {
-  font-size: 86px;
+  font-size: 72px;
   font-weight: bold;
 }
 h2 {
-  font-size: 50px;
+  font-size: 42px;
   font-weight: bold;
 }
 h3 {
@@ -55,7 +55,7 @@ body {
 // HEADER
 .header {
   height: 100px;
-  background-color: $orange-00;
+  background-color: $black-01;
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -64,7 +64,8 @@ body {
   }
   &__text {
     font-family: "Prociono", sans-serif;
-    font-size: 35px;
+    font-size: 30px;
+    color: $white-00;
   }
   .nav-header {
     &__list {
@@ -74,18 +75,22 @@ body {
       align-items: center;
     }
     &__item {
-      font-size: 23px;
+      font-size: 21px;
       font-weight: bold;
     }
     &__link {
       padding: 37px;
       transition: 0s padding, 0.4s background-color;
+      color: $white-00;
       &:hover,
       &:focus {
         background-color: $beige-10;
         outline: none;
       }
     }
+  }
+  #menu {
+    display: none;
   }
 }
 // TITLE
@@ -107,16 +112,16 @@ body {
     color: $white-10;
     position: absolute;
     z-index: 5;
-    max-width: 50%;
+    max-width: 735px;
   }
 }
 // ABOUT
 .about {
   text-align: center;
-  background-color: $orange-00;
+  background-color: $white-00;
   padding: 120px 0;
   &__text {
-    font-size: 36px;
+    font-size: 24px;
   }
   &__text + &__text {
     margin-top: 50px;
@@ -124,44 +129,59 @@ body {
 }
 // FEATURES
 .features {
-  padding: 90px 0;
+  padding: 165px 0 150px 0;
+  background-color: $grey-10;
+  &__title {
+    text-align: center;
+  }
   &__list {
     margin-top: 80px;
+    padding: 0 200px;
   }
   &__item {
-    padding-left: 43px;
     font-size: 30px;
     position: relative;
-    & + .features__item{
-      margin-top: 25px;
+    & + .features__item {
+      margin-top: 55px;
     }
-    &::before{
-      position: absolute;
-      display: block;
-      content: '';
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      left: 0;
-      top: 15px;
-      background-color: black;
+  }
+  .item-features {
+    display: flex;
+    &__title {
+      font-size: 20px;
+    }
+    &__text {
+      margin-top: 14px;
+      font-size: 18px;
+    }
+    &__icon {
+      width: 55px;
+    }
+    &__done {
+      width: inherit;
+    }
+    &__content {
+      padding-left: 40px;
     }
   }
 }
 // PORTFOLIO
 .portfolio {
-  background-color: $orange-00;
+  background-color: $white-00;
   min-height: 768px;
-  padding: 50px 0;
+  padding: 120px 0;
   &__heading {
     text-align: center;
   }
+  &__more{
+   opacity: 0;
+  }
   &__head {
-    font-size: 25px;
+    font-size: 23px;
     line-height: 27px;
   }
   &__body {
-    margin-top: 50px;
+    margin-top: 60px;
   }
   &__item {
     padding: 0 50px;
@@ -171,7 +191,7 @@ body {
   }
   &__text {
     margin-top: 50px;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 27px;
   }
   // SLIDER
@@ -205,7 +225,7 @@ body {
   .slick-dots {
     display: flex;
     justify-content: space-between;
-    width: 10%;
+    width: 25%;
     margin: 50px auto 0 auto;
   }
   .slick-dots li button {
@@ -216,14 +236,13 @@ body {
     height: 15px;
     border-radius: 50%;
     cursor: pointer;
-    background-color: #f7f7f7;
-    border: 3px solid transparent;
+    background-color: $grey-10;
+    border: none;
     margin: 0;
     padding: 0;
   }
   .slick-dots .slick-active button {
     background-color: $black-20;
-    border: 3px solid #f7f7f7;
   }
 
   &__item {
@@ -234,7 +253,8 @@ body {
 }
 // PRICE
 .price {
-  padding: 50px 0 90px 0;
+  padding: 65px 0;
+  background-color: $grey-10;
   &__heading {
     text-align: center;
   }
@@ -243,7 +263,7 @@ body {
   }
   .service-price {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     grid-gap: 30px;
 
     &__list {
@@ -252,9 +272,29 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background-color: $orange-00;
-      // border: 3px solid $grey-00;
-      // border-radius: 10px;
+      background-color: $white-00;
+    }
+    &__title {
+      font-size: 25px;
+    }
+    &__about {
+      margin-top: 19px;
+      font-size: 17px;
+      min-height: 80px;
+    }
+    &__include {
+      font-size: 20px;
+      margin-top: 25px;
+    }
+    &__text {
+      padding-left: 20px;
+      font-size: 18px;
+    }
+    &__present {
+      font-size: 17px;
+      padding-left: 18px;
+      margin-top: 30px;
+      display: block;
     }
     &__list ~ .service-price__list::before {
       position: absolute;
@@ -265,7 +305,7 @@ body {
       height: 120%;
       left: 0;
       top: -32px;
-      background-color: $grey-00;
+      background-color: $white-00;
     }
     &__roster {
       margin-top: 40px;
@@ -284,9 +324,7 @@ body {
         top: 10px;
       }
     }
-    &__text {
-      padding-left: 20px;
-    }
+
     &__point + .service-price__point {
       margin-top: 30px;
     }
@@ -294,11 +332,8 @@ body {
       width: 200px;
       margin: 54px auto 0 auto;
       font-size: 29px;
-      // background-color: #c4c4c4;
       padding: 5px 17px;
-      // border-radius: 10px;
       text-align: center;
-      // box-shadow: 1px 1px 5px 0px black;
       border: 2px solid $black-10;
     }
   }
@@ -306,8 +341,8 @@ body {
 // CHECKLIST
 .checklist {
   padding: 60px 0;
-  background-color: $orange-00;
-  &__title{
+  background-color: $white-00;
+  &__title {
     font-size: 37px;
   }
   &__heading {
@@ -320,14 +355,6 @@ body {
     border-radius: 15px;
   }
   &__link {
-    // display: block;
-    // width: 186px;
-    // margin: 0 auto;
-    // padding: 18px 25px;
-    // border-radius: 10px;
-    // border: 3px solid $black-10;
-    // background-color: $beige-00;
-    // color: $black-10;
     display: block;
     position: relative;
     border: none;
@@ -380,7 +407,8 @@ body {
 // FOOTER
 .footer {
   padding: 50px 0;
-  &__title{
+  background-color: $grey-10;
+  &__title {
     font-size: 37px;
     text-align: center;
   }
@@ -400,10 +428,5 @@ body {
     }
   }
 }
-
-
-
-
-
 
 @import "media";
